@@ -22,7 +22,13 @@ public class Client {
             products.add(new Item("B", 30));
             Promotion promoOne = new PromoOne(3, "A", 130);
             Cart checkout = new Cart();
-            double total = checkout.initiateTransaction(products, promoOne);
+            checkout.initiateTransaction(products, promoOne);
+
+            products.clear();
+            products.add(new Item("A", 50));
+            products.add(new Item("B", 30));
+            products.add(new Item("B", 30));
+            checkout.initiateTransaction(products, new PromoOne(2, "B", 45));
 
         }catch (PromotionsException e){
             throw new PromotionsException("Exception occured during the checkout", null );
