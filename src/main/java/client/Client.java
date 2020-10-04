@@ -31,7 +31,7 @@ public class Client {
             checkout.initiateTransaction(products, new PromoOne(2, "B", 45));
 
         }catch (PromotionsException e){
-            throw new PromotionsException("Exception occured during the checkout", null );
+            throw new PromotionsException("Exception occurred during the checkout", null );
         }
     }
 }

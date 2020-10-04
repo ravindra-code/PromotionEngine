@@ -32,6 +32,21 @@ public class Cart {
 
     }
 
+    public double findBestPromotion(List<Item> products) throws PromotionsException{
+
+        List<Promotion> promotions = ActivePromotions.initiatePromotions();
+        double discount = Integer.MIN_VALUE;
+        for (Promotion promotion: promotions){
+            double dis = applyPromotion(products, promotion);
+            if (dis>discount){
+                discount = dis;
+            }
+
+        }
+        return discount;
+
+    }
+
     public double initiateTransaction(List<Item> products, Promotion promotion)throws PromotionsException{
 
         double total = getTotalAmount(products) - applyPromotion(products, promotion);
