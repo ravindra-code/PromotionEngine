@@ -31,6 +31,15 @@ public class Cart {
 
     }
 
+    public double initiateTransaction(List<Item> products, Promotion promotion){
+
+        double total = getTotalAmount(products) - applyPromotion(products, promotion);
+        System.out.println("Total amount to be paid after applying promotion: " + total);
+        return total;
+    }
+
+
+
 
 
 }
