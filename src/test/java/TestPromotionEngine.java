@@ -1,4 +1,5 @@
 import dto.Item;
+import exception.PromotionsException;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import service.Cart;
@@ -14,7 +15,7 @@ public class TestPromotionEngine {
     private static final double DELTA = 1e-15;
 
     @Test
-    public void testPromoOne() throws Exception{
+    public void testPromoOne() throws PromotionsException {
 
         List<Item> products = new ArrayList<>();
         products.add( new Item("A",50 ));

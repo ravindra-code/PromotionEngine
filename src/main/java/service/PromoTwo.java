@@ -2,6 +2,7 @@ package service;
 
 import data.Price;
 import dto.Item;
+import exception.PromotionsException;
 
 import java.util.HashMap;
 import java.util.List;
@@ -25,7 +26,7 @@ public class PromoTwo implements Promotion{
     }
 
     @Override
-    public double apply(HashMap<String, Integer> items) throws Exception {
+    public double apply(HashMap<String, Integer> items) throws PromotionsException {
 
 
         if (items.containsKey(this.item1) && items.containsKey(this.item2) ){

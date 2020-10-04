@@ -1,6 +1,7 @@
 package service;
 
 import data.Price;
+import exception.PromotionsException;
 
 import java.util.HashMap;
 
@@ -25,7 +26,7 @@ public class PromoOne implements Promotion{
     }
 
     @Override
-    public double apply(HashMap<String, Integer> items) throws Exception{
+    public double apply(HashMap<String, Integer> items) throws PromotionsException{
 
         if (items.get(this.item)<this.quantity){
             System.out.println("PromoOne is not applicable...");

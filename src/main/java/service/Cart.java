@@ -1,6 +1,7 @@
 package service;
 
 import dto.Item;
+import exception.PromotionsException;
 
 import java.util.HashMap;
 import java.util.List;
@@ -16,7 +17,7 @@ public class Cart {
         return total;
     }
 
-    public double applyPromotion(List<Item> products, Promotion promotion) throws Exception{
+    public double applyPromotion(List<Item> products, Promotion promotion) throws PromotionsException {
         HashMap<String, Integer> items = new HashMap<>();
 
         for (Item item: products){

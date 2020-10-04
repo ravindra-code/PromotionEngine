@@ -1,6 +1,8 @@
 package data;
 
 import exception.InvalidProductException;
+import exception.PromotionsException;
+import service.Promotion;
 
 public enum Price {
 
@@ -26,7 +28,7 @@ public enum Price {
         return cost;
     }
 
-    public static Price getEnum(String key) throws Exception{
+    public static Price getEnum(String key) throws PromotionsException {
 
         switch (key){
             case "A":return Price.A;
