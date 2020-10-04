@@ -9,6 +9,7 @@ import service.Promotion;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.CheckedOutputStream;
 
 public class TestPromotionEngine {
 
@@ -56,5 +57,20 @@ public class TestPromotionEngine {
         Cart cart = new Cart();
         double total=  cart.getTotalAmount(products);
         Assert.assertEquals(total, 100, DELTA);
+    }
+
+    @Test
+    public void testBestPromotion() throws Exception{
+        List<Item> products = new ArrayList<>();
+        Cart cart = new Cart();
+        products.add(new Item("A", 50));
+        products.add(new Item("A", 50));
+        products.add(new Item("A", 50));
+        products.add(new Item("B", 30));
+        products.add(new Item("C", 20));
+        products.add(new Item("D", 15));
+        double bestPrice = cart.findBestPromotion(products);
+        Assert.assertEquals(bestPrice, 20, DELTA);
+
     }
 }
