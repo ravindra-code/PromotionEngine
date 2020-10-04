@@ -2,15 +2,20 @@ package dto;
 
 public class Item {
 
-    private String name;
+    private String id;
     private double price;
 
-    public String getName() {
-        return name;
+    public Item(String id, double price) {
+        this.id = id;
+        this.price = price;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public double getPrice() {
