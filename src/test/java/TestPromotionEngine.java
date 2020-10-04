@@ -9,6 +9,8 @@ import java.util.List;
 
 public class TestPromotionEngine {
 
+    private static final double DELTA = 1e-15;
+
     @Test
     public void testPromoOne(){
 
@@ -16,10 +18,9 @@ public class TestPromotionEngine {
         products.add( new Item("A",50 ));
         products.add( new Item("A",50 ));
         products.add( new Item("A",50 ));
-        PromoOne promoOne = new PromoOne();
+        PromoOne promoOne = new PromoOne(3, "A", 130);
         double price = promoOne.apply(products);
-        Assert.assertEquals(price, 130);
-
-
+        Assert.assertEquals(price, 130, DELTA);
+        
     }
 }
