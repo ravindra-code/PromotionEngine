@@ -1,10 +1,8 @@
 package service;
 
-import dto.Item;
-
-import java.util.List;
+import java.util.HashMap;
 
 public interface Promotion {
 
-    public double apply(List<Item> cart);
+    double apply(HashMap<String, Integer> cart);
 }

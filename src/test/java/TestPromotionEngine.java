@@ -1,7 +1,7 @@
 import dto.Item;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-import service.Checkout;
+import service.Cart;
 import service.PromoOne;
 import service.PromoTwo;
 import service.Promotion;
@@ -21,8 +21,9 @@ public class TestPromotionEngine {
         products.add( new Item("A",50 ));
         products.add( new Item("A",50 ));
         Promotion promoOne = new PromoOne(3, "A", 130);
-        double price = promoOne.apply(products);
-        Assert.assertEquals(price, 130, DELTA);
+        Cart checkout = new Cart();
+        double price = checkout.applyPromotion(products, promoOne);
+        Assert.assertEquals(price, 20, DELTA);
 
     }
 
@@ -35,8 +36,9 @@ public class TestPromotionEngine {
         products.add(new Item("C", 20));
         products.add(new Item("D", 15));
         Promotion promoTwo = new PromoTwo("C", "D", 30);
-        double price = promoTwo.apply(products);
-        Assert.assertEquals(price, 110, DELTA);
+        Cart checkout = new Cart();
+        double price = checkout.applyPromotion(products, promoTwo);
+        Assert.assertEquals(price, 5, DELTA);
 
     }
 
@@ -47,7 +49,7 @@ public class TestPromotionEngine {
         products.add(new Item("A", 50));
         products.add(new Item("B", 30));
         products.add(new Item("C", 20));
-        Checkout cart = new Checkout();
+        Cart cart = new Cart();
         double total=  cart.getTotalAmount(products);
         Assert.assertEquals(total, 100, DELTA);
     }

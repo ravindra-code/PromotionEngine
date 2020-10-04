@@ -25,25 +25,16 @@ public class PromoTwo implements Promotion{
     }
 
     @Override
-    public double apply(List<Item> cart) {
+    public double apply(HashMap<String, Integer> items) {
 
-        HashMap<String, Integer> items = new HashMap<>();
-        double total = 0;
-        for (Item item: cart){
-            if (items.containsKey(item.getId())){
-                items.put(item.getId(), items.get(item.getId())+1);
-            }else{
-                items.put(item.getId(), 1);
-            }
-            total += item.getPrice();
-        }
+
         if (items.containsKey(this.item1) && items.containsKey(this.item2) ){
-            total += this.discountedPrice - (Price.getEnum(item1).getCost() +
-                    Price.getEnum(item2).getCost());
+            return (Price.getEnum(item1).getCost() +
+                    Price.getEnum(item2).getCost()) - this.discountedPrice;
         }else{
             System.out.println("PromoTwo not applicable.");
 
         }
-        return total;
+        return 0;
     }
 }
