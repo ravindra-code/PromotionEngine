@@ -40,6 +40,9 @@ public class TestPromotionEngine {
         double price = checkout.applyPromotion(products, promoTwo);
         Assert.assertEquals(price, 5, DELTA);
 
+        double total = checkout.initiateTransaction(products, promoTwo);
+        Assert.assertEquals(total,110,DELTA);
+
     }
 
     @Test
