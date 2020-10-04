@@ -2,6 +2,7 @@ import dto.Item;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import service.PromoOne;
+import service.PromoTwo;
 import service.Promotion;
 
 import java.util.ArrayList;
@@ -26,6 +27,15 @@ public class TestPromotionEngine {
 
     @Test
     public void testPromoTwo(){
+
+        List<Item> products = new ArrayList<>();
+        products.add(new Item("A", 50));
+        products.add(new Item("B", 30));
+        products.add(new Item("C", 20));
+        products.add(new Item("D", 15));
+        Promotion promoTwo = new PromoTwo("C", "D", 30);
+        double price = promoTwo.apply(products);
+        Assert.assertEquals(price, 110, DELTA);
 
     }
 }

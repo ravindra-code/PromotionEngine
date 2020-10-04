@@ -12,6 +12,15 @@ import java.util.List;
 
 public class PromoTwo implements Promotion{
 
+    private String item1;
+    private String item2;
+    private double discountedPrice;
+
+    public PromoTwo(String item1, String item2, double discountedPrice) {
+        this.item1 = item1;
+        this.item2 = item2;
+        this.discountedPrice = discountedPrice;
+    }
 
     @Override
     public double apply(List<Item> cart) {
