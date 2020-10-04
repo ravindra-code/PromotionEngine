@@ -25,7 +25,7 @@ public class PromoOne implements Promotion{
     }
 
     @Override
-    public double apply(HashMap<String, Integer> items) {
+    public double apply(HashMap<String, Integer> items) throws Exception{
 
         if (items.get(this.item)<this.quantity){
             System.out.println("PromoOne is not applicable...");

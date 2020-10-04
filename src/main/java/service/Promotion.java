@@ -4,5 +4,5 @@ import java.util.HashMap;
 
 public interface Promotion {
 
-    double apply(HashMap<String, Integer> cart);
+    double apply(HashMap<String, Integer> cart) throws Exception;
 }

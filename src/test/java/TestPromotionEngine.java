@@ -14,7 +14,7 @@ public class TestPromotionEngine {
     private static final double DELTA = 1e-15;
 
     @Test
-    public void testPromoOne(){
+    public void testPromoOne() throws Exception{
 
         List<Item> products = new ArrayList<>();
         products.add( new Item("A",50 ));
@@ -28,7 +28,7 @@ public class TestPromotionEngine {
     }
 
     @Test
-    public void testPromoTwo(){
+    public void testPromoTwo() throws Exception{
 
         List<Item> products = new ArrayList<>();
         products.add(new Item("A", 50));

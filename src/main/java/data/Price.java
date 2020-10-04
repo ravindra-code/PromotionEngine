@@ -1,5 +1,7 @@
 package data;
 
+import exception.InvalidProductException;
+
 public enum Price {
 
     A("A",50),
@@ -24,7 +26,7 @@ public enum Price {
         return cost;
     }
 
-    public static Price getEnum(String key){
+    public static Price getEnum(String key) throws Exception{
 
         switch (key){
             case "A":return Price.A;
@@ -35,7 +37,7 @@ public enum Price {
 
             case "D": return Price.D;
 
-            default: throw new IllegalArgumentException ("Item not found.");
+            default: throw new InvalidProductException("Item not found.", null);
         }
     }
 

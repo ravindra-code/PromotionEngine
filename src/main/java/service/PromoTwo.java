@@ -25,7 +25,7 @@ public class PromoTwo implements Promotion{
     }
 
     @Override
-    public double apply(HashMap<String, Integer> items) {
+    public double apply(HashMap<String, Integer> items) throws Exception {
 
 
         if (items.containsKey(this.item1) && items.containsKey(this.item2) ){
