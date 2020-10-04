@@ -32,7 +32,7 @@ public class Cart {
 
     }
 
-    public double initiateTransaction(List<Item> products, Promotion promotion)throws Exception{
+    public double initiateTransaction(List<Item> products, Promotion promotion)throws PromotionsException{
 
         double total = getTotalAmount(products) - applyPromotion(products, promotion);
         System.out.println("Total amount to be paid after applying promotion: " + total);
